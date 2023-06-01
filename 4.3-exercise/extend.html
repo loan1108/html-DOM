@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máy tính</title>
+  </head>
+  <body>
+    <h>Caculator</h>
+    <input id="firstInput" name="input1" />
+    <input id="secondInput" name="input2" />
+    <br />
+    <button type="button" onclick="caculate('cộng')">Addition(+)</button>
+    <button type="button" onclick="caculate('trừ')">Subtraction(-)</button>
+    <button type="button" onclick="caculate('nhân')">Multiplication(*)</button>
+    <button type="button" onclick="caculate('chia')">Division(/)</button>
+    <p id="result"></p>
+    <script>
+      let result = document.getElementById("result");
+      function caculate(pheptinh = "cộng") {
+        let firstNum = +document.getElementById("firstInput").value;
+        let secondNum = +document.getElementById("secondInput").value;
+
+        switch (pheptinh) {
+          case "cộng":
+            let addResult = firstNum + secondNum;
+            result.innerHTML = `Result Addition: ${addResult}`;
+            break;
+          case "trừ":
+            let subResult = firstNum - secondNum;
+            result.innerHTML = `Result Subtraction: ${subResult}`;
+            break;
+          case "nhân":
+            let multiResult = firstNum * secondNum;
+            result.innerHTML = `Result Multiplication: ${multiResult}`;
+            break;
+          case "chia":
+            let divResult = firstNum / secondNum;
+            result.innerHTML = `Result Division: ${divResult}`;
+        }
+
+      }
+    </script>
+  </body>
+</html>
